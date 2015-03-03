@@ -23,14 +23,28 @@ git clone https://github.com/currentuser/currentuser-example-blog-rails.git
 
 ### Remote
 
-TBD
+#### Heroku
+
+**1.** Create an application on heroku.com.
+
+**2.** Provision and configure ClearDB plugin: https://devcenter.heroku.com/articles/cleardb
+
+**3.** Configure your git repository (replace `****` by the name of your application) and deploy it:
+```sh
+heroku git:remote -a ****
+git push heroku
+```
+
+#### Other platforms
+
+See your platform documentation.
 
 ### Local
 
 Create a MySQL user (you could skip this part if you prefer to use your `root` user):
 ```sql
-CREATE USER 'cu_ex_blog_rails'@'localhost' IDENTIFIED BY 'cu_ex_blog_rails';
-GRANT ALL ON cu_ex_blog_rails.* TO 'cu_ex_blog_rails'@'localhost';
+CREATE USER cu_ex_blog_rails@localhost IDENTIFIED BY 'cu_ex_blog_rails';
+GRANT ALL ON cu_ex_blog_rails.* TO cu_ex_blog_rails@localhost;
 ```
 Create a configuration file:
 ```yaml
