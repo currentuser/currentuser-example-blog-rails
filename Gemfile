@@ -33,6 +33,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Allow to use uuid with MySQL
+gem 'activeuuid'
+
 group :production do
   gem 'rails_12factor'  # Recommended by Heroku
 end

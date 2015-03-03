@@ -36,6 +36,11 @@ heroku git:remote -a xxx
 git push heroku
 ```
 
+**4.** Initialize your database:
+```sh
+heroku rake db:schema:load
+```
+
 #### Other platforms
 
 See your platform documentation.
