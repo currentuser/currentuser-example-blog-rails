@@ -8,6 +8,9 @@
 /.bundle
 /.ruby-gemset
 
+# Ignore local configuration
+config/application.yml
+
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
