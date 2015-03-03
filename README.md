@@ -5,14 +5,14 @@ This application uses MySQL for demo purpose but we could have use PostgreSQL.
 
 ## How this application has been built?
 
-**Note:** this part of the documentation explains how the source code of this application has been built for educational purpose.
-You don't need to follow these steps if you only want to run the application.
+_**Note: this part of the documentation explains how the source code of this application has been built for educational purpose.
+You don't need to follow these steps if you only want to run the application.**_
 
 The source code of this application has been built the following way:
 ```sh
 rails new currentuser-example-blog-rails --database=mysql
 ```
-The file 'config/database.yml' has been adapted to make database configuration more flexible.
+The file `config/database.yml` has been adapted to make database configuration more flexible.
 
 ## Deployment
 
@@ -28,7 +28,7 @@ TBD
 ### Local
 
 Create a MySQL user (you could skip this part if you prefer to use your `root` user):
-```mysql
+```sql
 CREATE USER 'cu_ex_blog_rails'@'localhost' IDENTIFIED BY 'cu_ex_blog_rails';
 GRANT ALL ON cu_ex_blog_rails.* TO 'cu_ex_blog_rails'@'localhost';
 ```
