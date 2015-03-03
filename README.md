@@ -15,6 +15,14 @@ rails generate scaffold Post user_id:uuid:index body:text
 ```
 The file `config/database.yml` has been adapted to make database configuration more flexible.
 
+The file `Gemfile` has been enhanced with the following gems:
+
+* `activeuuid` allows optimized uuid with MySQL (not required if we had used PostgreSQL)
+* `rails_12factor` allows easier deployment on Heroku
+* `figaro` allows to write ENV variables in a file `config/application.yml`
+
+Note that none of these gems is strictly required for Currentuser.io.
+
 ## Deployment
 
 To retrieve a local version of this application:
@@ -38,7 +46,7 @@ git push heroku
 
 **4.** Initialize your database:
 ```sh
-heroku rake db:schema:load
+heroku run rake db:schema:load
 ```
 
 #### Other platforms
