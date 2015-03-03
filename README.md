@@ -15,6 +15,16 @@ rails generate scaffold Post user_id:uuid:index body:text
 ```
 The file `config/database.yml` has been adapted to make database configuration more flexible.
 
+A root route has been added:
+```ruby
+# config/routes.rb
+Rails.application.routes.draw do
+  root 'posts#index'
+  ...
+
+end
+```
+
 The file `Gemfile` has been enhanced with the following gems:
 
 * `activeuuid` allows optimized uuid with MySQL (not required if we had used PostgreSQL)
