@@ -1,7 +1,7 @@
 # currentuser-example-blog-rails
 Example Rails application using [Currentuser.io](http://www.currentuser.io).
 
-This application uses MySQL for demo purpose but we could have use PostgreSQL.
+This application uses MySQL for demo purpose because it is widely used, but Currentuser.io works great with PostgreSQL too.
 
 ## How this application has been built?
 
@@ -11,6 +11,7 @@ You don't need to follow these steps if you only want to run the application.**_
 The source code of this application has been built the following way:
 ```sh
 rails new currentuser-example-blog-rails --database=mysql
+rails generate scaffold Post user_id:uuid:index body:text
 ```
 The file `config/database.yml` has been adapted to make database configuration more flexible.
 
@@ -29,9 +30,9 @@ git clone https://github.com/currentuser/currentuser-example-blog-rails.git
 
 **2.** Provision and configure ClearDB plugin: https://devcenter.heroku.com/articles/cleardb
 
-**3.** Configure your git repository (replace `****` by the name of your application) and deploy it:
+**3.** Configure your git repository (replace `xxx` by the name of your application) and deploy it:
 ```sh
-heroku git:remote -a ****
+heroku git:remote -a xxx
 git push heroku
 ```
 
