@@ -8,14 +8,14 @@ This application uses MySQL for demo purpose because it is widely used, but Curr
 _**Note: this part of the documentation explains how the source code of this application has been built for educational purpose.
 You don't need to follow these steps if you only want to run the application.**_
 
-The source code of this application has been built the following way:
+**1.** The source code of this application has been built the following way:
 ```sh
 rails new currentuser-example-blog-rails --database=mysql
 rails generate scaffold Post user_id:uuid:index body:text
 ```
-The file `config/database.yml` has been adapted to make database configuration more flexible.
+**2.** The file `config/database.yml` has been adapted to make database configuration more flexible.
 
-A root route has been added:
+**3.** A root route has been added:
 ```ruby
 # config/routes.rb
 Rails.application.routes.draw do
@@ -24,8 +24,7 @@ Rails.application.routes.draw do
 
 end
 ```
-
-The file `Gemfile` has been enhanced with the following gems:
+**4.** The file `Gemfile` has been enhanced with the following gems:
 
 * `activeuuid` allows optimized uuid with MySQL (not required if we had used PostgreSQL)
 * `rails_12factor` allows easier deployment on Heroku
