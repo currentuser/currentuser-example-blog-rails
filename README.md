@@ -8,14 +8,28 @@ This application uses MySQL for demo purpose because it is widely used, but Curr
 _**Note: this part of the documentation explains how the source code of this application has been built for educational purpose.
 You don't need to follow these steps if you only want to run the application.**_
 
-**1.** The source code of this application has been built the following way:
+**1.** The base of the application has been generated with Rails:
+
 ```sh
 rails new currentuser-example-blog-rails --database=mysql
+```
+
+**2.** The file `Gemfile` has been enhanced with the following gems:
+
+* [activeuuid](https://github.com/jashmenn/activeuuid) allows optimized uuid with MySQL (not required if we had used PostgreSQL)
+* [rails_12factor](https://github.com/heroku/rails_12factor) allows easier deployment on Heroku
+* [figaro](https://github.com/laserlemon/figaro) allows easier local deployment
+
+**3.** The file `config/database.yml` has been adapted to make database configuration more flexible.
+
+**4.** The base of the behavior has been generated with a Rails scaffold :
+
+```sh
 rails generate scaffold Post user_id:uuid:index body:text
 ```
-**2.** The file `config/database.yml` has been adapted to make database configuration more flexible.
 
-**3.** A root route has been added:
+**5.** A root route has been added:
+
 ```ruby
 # config/routes.rb
 Rails.application.routes.draw do
@@ -24,13 +38,6 @@ Rails.application.routes.draw do
 
 end
 ```
-**4.** The file `Gemfile` has been enhanced with the following gems:
-
-* `activeuuid` allows optimized uuid with MySQL (not required if we had used PostgreSQL)
-* `rails_12factor` allows easier deployment on Heroku
-* `figaro` allows to write ENV variables in a file `config/application.yml`
-
-Note that none of these gems is strictly required for Currentuser.io.
 
 ## Deployment
 
