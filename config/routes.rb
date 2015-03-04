@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  currentuser
+
   root 'posts#index'
 
   resources :posts
