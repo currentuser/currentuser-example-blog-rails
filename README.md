@@ -17,6 +17,7 @@ rails new currentuser-example-blog-rails --database=mysql
 **2.** The file [Gemfile](Gemfile) has been enhanced with the following gems:
 
 * [activeuuid](https://github.com/jashmenn/activeuuid) allows optimized uuid with MySQL (not required if we had used PostgreSQL)
+* [twitter-bootstrap-rails](https://github.com/seyhunak/twitter-bootstrap-rails) brings Twitter Bootstrap
 * [rails_12factor](https://github.com/heroku/rails_12factor) allows easier deployment on Heroku
 * [figaro](https://github.com/laserlemon/figaro) allows easier local deployment
 
@@ -47,10 +48,18 @@ end
 **5.** The base of the behavior has been generated with a Rails scaffold:
 
 ```sh
-rails generate scaffold Post user_id:uuid:index body:text
+rails g scaffold Post user_id:uuid:index body:text
 ```
 
-**6.** The PostsController has been protected, as explained in the [documentation](http://www.currentuser.io/documentation/authentication.html):
+**6.** Twitter Bootstrap has been integrated:
+
+```sh
+rails g bootstrap:install static  --no-coffeescript
+rails g bootstrap:layout
+rails g bootstrap:themed Posts
+```
+
+**7.** The PostsController has been protected, as explained in the [documentation](http://www.currentuser.io/documentation/authentication.html):
 
 ```ruby
 # app/controllers/posts_controller.rb
@@ -58,7 +67,7 @@ class PostsController < ApplicationController
   before_action :require_currentuser
 ```
 
-**6.** A root route has been added:
+**8.** A root route has been added:
 
 ```ruby
 # config/routes.rb
@@ -88,7 +97,7 @@ git push heroku
 **3.** Create an application on [Currentuser.io](http://www.currentuser.io) (use `https://xxx.herokuapp.com` as application URL)
 and retrieve Project ID from the Currentuser.io settings.
 
-**4.** Configure your application (replace 'ffffffff-ffff-ffff-ffff-ffffffffffff' with your Currentuser.io Project ID)
+**4.** Configure your application (replace `ffffffff-ffff-ffff-ffff-ffffffffffff` with your Currentuser.io Project ID)
 
 ```sh
 heroku config:set CURRENTUSER_PROJECT_ID=ffffffff-ffff-ffff-ffff-ffffffffffff

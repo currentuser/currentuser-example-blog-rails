@@ -36,6 +36,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Allow to use uuid with MySQL
 gem 'activeuuid'
 
+# Allow to use Twitter Bootstrap styles and javascripts
+gem 'twitter-bootstrap-rails'
+
 # Allow to use Currentuser.io hosted sign-up and sign-in forms.
 gem 'currentuser-services'
 
