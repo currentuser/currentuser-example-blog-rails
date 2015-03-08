@@ -2,6 +2,9 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+# Temporary fix https://github.com/jashmenn/activeuuid/issues/56
+require 'active_record/connection_adapters/mysql2_adapter'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
