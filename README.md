@@ -75,6 +75,15 @@ Rails.application.routes.draw do
   root 'posts#index'
 ```
 
+**9.** In [app/controllers/posts_controller.rb](app/controllers/posts_controller.rb), each created post is linked to current user:
+
+```ruby
+# app/controllers/posts_controller.rb
+def create
+  @post = Post.new(post_params)
+  @post.user_id = currentuser_id
+```
+
 ## Deployment
 
 To retrieve a local version of this application:
