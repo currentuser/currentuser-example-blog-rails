@@ -84,6 +84,9 @@ def create
   @post.user_id = currentuser_id
 ```
 
+**10.** Adapt [app/views/posts/index.html.erb](app/views/posts/index.html.erb) and [app/views/posts/show.html.erb](app/views/posts/show.html.erb) views
+to make the application look like a blog.
+
 ## Deployment
 
 To retrieve a local version of this application:

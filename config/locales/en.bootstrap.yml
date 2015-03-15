@@ -14,7 +14,7 @@ en:
       cancel: "Cancel"
       confirm: "Are you sure?"
       destroy: "Delete"
-      new: "New"
+      new: "New post"
       edit: "Edit"
     titles:
       edit: "Edit %{model}"
